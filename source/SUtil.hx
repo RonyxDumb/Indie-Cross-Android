@@ -1,7 +1,7 @@
 package;
 
 #if android
-import android.Toast;
+import android.widget.Toast;
 import android.Permissions;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
