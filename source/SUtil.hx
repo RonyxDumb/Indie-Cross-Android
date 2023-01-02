@@ -1,7 +1,7 @@
 package;
 
 #if android
-import android.Hardware;
+import android.Toast;
 import android.Permissions;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
@@ -61,12 +61,12 @@ class SUtil
 	public static function check()
 	{
 		#if android
-		if (!Permissions.getGrantedPermissions().contains(PermissionsList.WRITE_EXTERNAL_STORAGE)
-			&& !Permissions.getGrantedPermissions().contains(PermissionsList.READ_EXTERNAL_STORAGE))
+		if (!Permissions.getGrantedPermissions().contains(Permissions.WRITE_EXTERNAL_STORAGE)
+			&& !Permissions.getGrantedPermissions().contains(Permissions.READ_EXTERNAL_STORAGE))
 		{
 			if (VERSION.SDK_INT >= VERSION_CODES.M)
 			{
-				Permissions.requestPermissions([PermissionsList.WRITE_EXTERNAL_STORAGE, PermissionsList.READ_EXTERNAL_STORAGE]);
+				Permissions.requestPermissions([Permissions.WRITE_EXTERNAL_STORAGE, Permissions.READ_EXTERNAL_STORAGE]);
 
 				/**
 				 * Basically for now i can't force the app to stop while its requesting a android permission, so this makes the app to stop while its requesting the specific permission
@@ -82,8 +82,8 @@ class SUtil
 			}
 		}
 
-		if (Permissions.getGrantedPermissions().contains(PermissionsList.WRITE_EXTERNAL_STORAGE)
-			&& Permissions.getGrantedPermissions().contains(PermissionsList.READ_EXTERNAL_STORAGE))
+		if (Permissions.getGrantedPermissions().contains(Permissions.WRITE_EXTERNAL_STORAGE)
+			&& Permissions.getGrantedPermissions().contains(Permissions.READ_EXTERNAL_STORAGE))
 		{
 			if (!FileSystem.exists(SUtil.getPath()))
 				FileSystem.createDirectory(SUtil.getPath());
@@ -166,7 +166,7 @@ class SUtil
 			}
 			#if android
 			catch (e:Dynamic)
-			Hardware.toast("Error!\nClouldn't save the crash dump because:\n" + e, ToastType.LENGTH_LONG);
+			Toast.makeText("Error!\nClouldn't save the crash dump because:\n" + e, Toast.LENGTH_LONG);
 			#end
 
 			Sys.println(errMsg);
@@ -185,11 +185,11 @@ class SUtil
 				FileSystem.createDirectory(SUtil.getPath() + 'saves');
 
 			File.saveContent(SUtil.getPath() + 'saves/' + fileName + fileExtension, fileData);
-			Hardware.toast("File Saved Successfully!", ToastType.LENGTH_LONG);
+			Toast.makeText("File Saved Successfully!", Toast.LENGTH_LONG);
 		}
 		#if android
 		catch (e:Dynamic)
-		Hardware.toast("Error!\nClouldn't save the file because:\n" + e, ToastType.LENGTH_LONG);
+		Toast.makeText("Error!\nClouldn't save the file because:\n" + e, Toast.LENGTH_LONG);
 		#end
 	}
 
@@ -202,7 +202,7 @@ class SUtil
 		}
 		#if android
 		catch (e:Dynamic)
-		Hardware.toast("Error!\nClouldn't copy the file because:\n" + e, ToastType.LENGTH_LONG);
+		Toast.makeText("Error!\nClouldn't copy the file because:\n" + e, Toast.LENGTH_LONG);
 		#end
 	}
 }
