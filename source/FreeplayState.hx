@@ -1,7 +1,7 @@
 package;
 
 #if android
-import android.Hardware;
+import android.Tools;
 #end
 import offsetMenus.IconOffsets;
 // import GameJolt.GameJoltInfo;
