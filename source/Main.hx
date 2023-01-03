@@ -36,6 +36,8 @@ class Main extends Sprite
 	public static var menubpm:Float = 117;
 	public static var curSave:String = 'save';
 	public static var logAsked:Bool = false;
+	public static var skipSplash:Bool = true; // Psych Engine
+	public static var startFullscreen:Bool = false; // Psych Engine
 	public static var focusMusicTween:FlxTween;
 	public static var hiddenSongs:Array<String> = ['gose', 'gose-classic', 'saness'];
 	public static var gjToastManager:GJToastManager;
@@ -53,7 +55,7 @@ class Main extends Sprite
 
 		SUtil.check();
 
-		addChild(new FlxGame(0, 0, Caching, 1, 60, 60, true, false));
+		addChild(new FlxGame(1280, 720, Caching, 1, 60, skipSplash, startFullscreen));
 		gjToastManager = new GJToastManager();
 		addChild(memoryMonitor);
 		addChild(fpsCounter);
