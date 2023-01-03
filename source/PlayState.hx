@@ -8536,7 +8536,7 @@ class PlayState extends MusicBeatState
 		FlxG.sound.play(Paths.sound('inked', 'bendy'));
 		FlxG.camera.shake(0.03, 0.05);
 		#if android
-		Hardware.vibrate(50);
+		Tools.vibrate(50);
 		#end
 		// inkTime = 1000;
 
@@ -12633,7 +12633,7 @@ class PlayState extends MusicBeatState
 				FlxG.camera.shake(0.015, 0.1);
 				camHUD.shake(0.005, 0.1);
 				#if android
-				Hardware.vibrate(100);
+				Tools.vibrate(100);
 				#end
 
 				chromVal = 0.01;
