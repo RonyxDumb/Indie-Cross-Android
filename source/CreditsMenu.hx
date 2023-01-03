@@ -358,7 +358,6 @@ class CreditsMenu extends MusicBeatState
 
 			add(smallIcon);
 			smallIcon.ID = i;
-			FlxMouseEventManager.add(smallIcon, null, null, hoverCallback, null, false, true, false);
 
 			credIcons.push(smallIcon);
 		}
