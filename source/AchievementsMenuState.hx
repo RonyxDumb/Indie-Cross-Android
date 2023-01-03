@@ -1,7 +1,7 @@
 package;
 
 #if android
-import android.Hardware;
+import android.Tools;
 #end
 import flixel.util.FlxTimer;
 #if desktop
@@ -163,7 +163,7 @@ class AchievementsMenuState extends MusicBeatState
 		{
 			FlxG.camera.shake(0.01);
 			#if android
-			Hardware.vibrate(500);
+			Tools.vibrate(500);
 			#end
 			FlxG.sound.play(Paths.sound('weekDeny', 'shared'));
 		}
