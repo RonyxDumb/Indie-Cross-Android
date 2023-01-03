@@ -1962,7 +1962,7 @@ class PlayState extends MusicBeatState
 							 */
 
 							// i dont like how i implmented the stair stuff, feel free to make it better
-							stairsBG = new FlxBackdrop(Paths.image('stairs/scrollingBG', 'bendy'), 0, 1, false, true);
+							stairsBG = new FlxBackdrop(Paths.image('stairs/scrollingBG', 'bendy'));
 							stairsBG.screenCenter();
 							stairsBG.alpha = 0.0001;
 							stairsBG.velocity.set(0, 180);
@@ -12361,16 +12361,16 @@ class PlayState extends MusicBeatState
 		// NIGHTMARE RUN STAIRS
 		if (SONG.song.toLowerCase() == 'nightmare-run' && nmStairs)
 		{
-			stairsBG = new FlxBackdrop(Paths.image('stairs/scrollingBG', 'bendy'), 0, 1, false, true);
+			stairsBG = new FlxBackdrop(Paths.image('stairs/scrollingBG', 'bendy'));
 			stairsBG.screenCenter();
 			stairsBG.velocity.set(0, 240);
 
-			stairsChainL = new FlxBackdrop(Paths.image('stairs/chainleft', 'bendy'), 0, 1, false, true);
+			stairsChainL = new FlxBackdrop(Paths.image('stairs/chainleft', 'bendy'));
 			stairsChainL.screenCenter();
 			stairsChainL.x -= 500;
 			stairsChainL.velocity.set(0, 1000);
 
-			stairsChainR = new FlxBackdrop(Paths.image('stairs/chainright', 'bendy'), 0, 1, false, true);
+			stairsChainR = new FlxBackdrop(Paths.image('stairs/chainright', 'bendy'));
 			stairsChainR.screenCenter();
 			stairsChainR.x += 520;
 			stairsChainR.velocity.set(0, 1510);
