@@ -87,6 +87,8 @@
 	<!--Android-Internet-connection-stuff-->
 	<android permission="android.permission.ACCESS_NETWORK_STATE"/>
 	<android permission="android.permission.INTERNET"/>
+	<config:android gradle-version="7.5.1" />
+        <config:android gradle-plugin="7.3.1" />
 
 	<!-- _________________________________ Custom _______________________________ -->
 
