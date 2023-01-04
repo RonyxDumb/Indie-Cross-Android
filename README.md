@@ -1,7 +1,9 @@
 # Friday Night Funkin': Indie Cross ![icon](assets/compileData/icon32.png)
 ## About
 FNF: Indie Cross is a massive community collaboration with the goal of bringing together an ultimate rhythm gaming experience.
-WARNING!!! In the Android Build, sometimes can crash!
+
+### WARNING!!! 
+In the Android Build, sometimes can crash!
 
 # Credits
 ### RonyxDumb (Android Porter)
@@ -55,7 +57,7 @@ This game was made with love to Newgrounds and its community. Extra love to Tom 
 	- `haxelib git tentools https://github.com/TentaRJ/tentools`
 	
 # Android Installation
-Follow a guide for compiling (FNF for Android)[https://github.com/RonyxDumb/FNF-Android-Porting-Guide], but with some changes:
+Follow a guide for compiling [FNF for Android](https://github.com/RonyxDumb/FNF-Android-Porting-Guide), but with some changes:
 1. Download
 * [JDK](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html) - Download the version `11` of it
 * [Android Studio](https://developer.android.com/studio) - I recomend you to download the latest version
