@@ -3,7 +3,7 @@
 FNF: Indie Cross is a massive community collaboration with the goal of bringing together an ultimate rhythm gaming experience.
 
 ### WARNING!!! 
-In the Android Build, sometimes can crash!
+The Android Build is not optimized(and I won't try to do it), and sometimes crash.
 
 # Credits
 ### RonyxDumb (Android Porter)
