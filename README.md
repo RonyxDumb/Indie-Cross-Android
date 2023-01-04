@@ -66,7 +66,7 @@ Follow a guide for compiling [FNF for Android](https://github.com/RonyxDumb/FNF-
 2. Follow the instructions for compiling for PC, after do this:
 - install LincLuaJit from Sirox's Repository
   `haxelib git linc_luajit https://github.com/Sirox228/linc_luajit`
-- install Extensions-AndroidTool 
+- install Extensions-AndroidTools 
   `haxelib git extension-androidtools https://github.com/MAJigsaw77/extension-androidtools`
   
  3. In the terminal, write:
