@@ -2,6 +2,13 @@
 ## About
 FNF: Indie Cross is a massive community collaboration with the goal of bringing together an ultimate rhythm gaming experience.
 
+### Android About
+For play Indie Cross as well, you need a good phone!
+Lke 6 GB of Ram and other stuff.
+
+### Android Gameplay
+![preview](.github/PreviewStuff/mobizen_20230104_214737.mp4)
+
 ### WARNING!!! 
 The Android Build is not optimized(and I won't try to do it), and sometimes crash.
 
