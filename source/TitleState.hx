@@ -149,7 +149,7 @@ class TitleState extends MusicBeatState
 				FlxG.sound.music.stop();
 
 			#if android
-			skipText = new FlxText(0, FlxG.height - 26, 0, "Press Back on your phone to skip", 18);
+			skipText = new FlxText(0, FlxG.height - 26, 0, "Press Back on your Phone to skip", 18);
 			#else
 			skipText = new FlxText(0, FlxG.height - 26, 0, "Press Enter to skip", 18);
 			#end

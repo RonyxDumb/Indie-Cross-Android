@@ -71,13 +71,13 @@ class SUtil
 				/**
 				 * Basically for now i can't force the app to stop while its requesting a android permission, so this makes the app to stop while its requesting the specific permission
 				 */
-				Application.current.window.alert('If you accepted the permissions you are all good!' + "\nIf you didn't then expect a crash"
-					+ 'Press Ok to see what happens',
-					'Permissions?');
+				Application.current.window.alert('Consenti al gioco di leggere i contenuti nella Memoria Interna' + "\nSe non accetti, aspettati che il gioco crash"
+					+ 'Premi OK e vedi che succede',
+					'Consenti?');
 			}
 			else
 			{
-				Application.current.window.alert('Please grant the game storage permissions in app settings' + '\nPress Ok to close the app', 'Permissions?');
+				Application.current.window.alert('Consenti al gioco di leggere i contenuti dalle impostazioni' + '\nPremi OK per chiudere app', 'Consenti?');
 				System.exit(1);
 			}
 		}
@@ -166,7 +166,7 @@ class SUtil
 			}
 			#if android
 			catch (e:Dynamic)
-			Toast.makeText("Error!\nClouldn't save the crash dump because:\n" + e, Toast.LENGTH_LONG);
+			Toast.makeText("Errore!\nImpossibile salvare il Crush Dump:\n" + e, Toast.LENGTH_LONG);
 			#end
 
 			Sys.println(errMsg);
