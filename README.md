@@ -7,8 +7,8 @@ For play Indie Cross as well, you need a good phone!
 Like 6 GB of Ram and other stuff.
 
 <!--
-### Android Gameplay
-![preview](.github/PreviewStuff/mobizen_20230104_214737.mp4) --> //unused bc Github dont support "BIG VIDEOS"
+### Android Gameplay //unused bc Github dont support "BIG VIDEOS"
+![preview](.github/PreviewStuff/mobizen_20230104_214737.mp4) --> 
 
 ### WARNING!!! 
 The Android Build is not optimized(and I won't try to do it), and sometimes crash.
