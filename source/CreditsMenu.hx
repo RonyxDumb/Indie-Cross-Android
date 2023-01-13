@@ -264,8 +264,7 @@ class CreditsMenu extends MusicBeatState
 		['Cval', "what the? im jads?", "Charter", "0", "https://twitter.com/cval_brown"]
 	];
 
-	var specialThanksMain:String = "RonyxDumb (Android Porter)\n
-	    James Dijit (VA of Sammy)\n
+	var specialThanksMain:String = "James Dijit (VA of Sammy)\n
 		Dextermanning (Devil vocals)\n
 		Fliper (Pixel art for the First Sans Cutscene)\n
 		OblivionFall (Additional Anims and Special Effects)\n
