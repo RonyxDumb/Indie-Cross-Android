@@ -61,8 +61,9 @@ class OptionsMenu extends MusicBeatState
 		]),
 		new OptionCategory("Accessibility", [
 			new ShowSubtitles("Show subtitles during cutscenes."),
-			new Colorblind("") // new LogInGJ("Log into gamejolt for achievements & perks"),
-				// new LogOutGJ("Log out of your gamejolt account")
+			new Colorblind(""),
+			new LogInGJ("Log into gamejolt for achievements & perks"),
+		    new LogOutGJ("Log out of your gamejolt account")
 		])
 	];
 

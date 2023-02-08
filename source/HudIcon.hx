@@ -55,7 +55,7 @@ class HudIcon extends FlxSprite
 				setZoom(0.5);
 		}
 
-		antialiasing = FlxG.save.data.highquality && !StringTools.endsWith(type, 'UT');
+		antialiasing = FlxG.save.data.lowquality && !StringTools.endsWith(type, 'UT');
 
 		scrollFactor.set();
 

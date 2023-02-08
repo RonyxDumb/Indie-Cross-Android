@@ -52,7 +52,7 @@ class GameplayCustomizeState extends MusicBeatState
 		bg.setGraphicSize(Std.int(bg.width * 0.7));
 		bg.updateHitbox();
 		bg.screenCenter();
-		bg.antialiasing = FlxG.save.data.highquality;
+		bg.antialiasing = FlxG.save.data.lowquality;
 		add(bg);
 
 		var camFollow = new FlxObject(0, 0, 1, 1);
@@ -215,7 +215,7 @@ class GameplayCustomizeState extends MusicBeatState
 			babyArrow.animation.addByPrefix('purple', 'arrowLEFT');
 			babyArrow.animation.addByPrefix('red', 'arrowRIGHT');
 
-			babyArrow.antialiasing = FlxG.save.data.highquality;
+			babyArrow.antialiasing = FlxG.save.data.lowquality;
 			babyArrow.setGraphicSize(Std.int(babyArrow.width * Note.noteWidth));
 
 			switch (Math.abs(i))

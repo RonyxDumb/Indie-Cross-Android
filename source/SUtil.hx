@@ -71,13 +71,13 @@ class SUtil
 				/**
 				 * Basically for now i can't force the app to stop while its requesting a android permission, so this makes the app to stop while its requesting the specific permission
 				 */
-				Application.current.window.alert('Consenti al gioco di leggere i contenuti nella Memoria Interna' + "\nSe non accetti, aspettati che il gioco crash"
+				Application.current.window.alert('Consenti che il gioco legga i file? dalla memoria?' + "\nSe non accetti, aspettati che il gioco crasha"
 					+ 'Premi OK e vedi che succede',
 					'Consenti?');
 			}
 			else
 			{
-				Application.current.window.alert('Consenti al gioco di leggere i contenuti dalle impostazioni' + '\nPremi OK per chiudere app', 'Consenti?');
+				Application.current.window.alert('Consenti che il gioco legga i file dalla memoria?' + '\nPremi OK per chiudere app', 'Consenti?');
 				System.exit(1);
 			}
 		}
@@ -170,14 +170,14 @@ class SUtil
 			#end
 
 			Sys.println(errMsg);
-			Application.current.window.alert(errMsg, 'Error!');
+			Application.current.window.alert(errMsg, 'Errore!');
 
 			System.exit(1);
 		});
 	}
 
 	public static function saveContent(fileName:String = 'file', fileExtension:String = '.json',
-			fileData:String = 'you forgot to add something in your code lol')
+			fileData:String = 'Hai scordato di aggiungere qualcosa nel tuo codice')
 	{
 		try
 		{
@@ -185,11 +185,11 @@ class SUtil
 				FileSystem.createDirectory(SUtil.getPath() + 'saves');
 
 			File.saveContent(SUtil.getPath() + 'saves/' + fileName + fileExtension, fileData);
-			Toast.makeText("File Saved Successfully!", Toast.LENGTH_LONG);
+			Toast.makeText("File salvato con successo!", Toast.LENGTH_LONG);
 		}
 		#if android
 		catch (e:Dynamic)
-		Toast.makeText("Error!\nClouldn't save the file because:\n" + e, Toast.LENGTH_LONG);
+		Toast.makeText("Errore! \nImpossibile salvare il file perchè:\n" + e, Toast.LENGTH_LONG);
 		#end
 	}
 
@@ -202,7 +202,7 @@ class SUtil
 		}
 		#if android
 		catch (e:Dynamic)
-		Toast.makeText("Error!\nClouldn't copy the file because:\n" + e, Toast.LENGTH_LONG);
+		Toast.makeText("Errore!\nImpossibile copiare il file perchè:\n" + e, Toast.LENGTH_LONG);
 		#end
 	}
 }

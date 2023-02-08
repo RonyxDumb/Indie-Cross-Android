@@ -39,7 +39,7 @@ class TitleState extends MusicBeatState
 
 		bg = new FlxSprite();
 		bg.frames = Paths.getSparrowAtlas('title/Bg');
-		bg.antialiasing = FlxG.save.data.highquality;
+		bg.antialiasing = FlxG.save.data.lowquality;
 		bg.animation.addByPrefix('idle', 'ddddd instance 1', 24, false);
 		bg.animation.play('idle', true);
 		bg.updateHitbox();
@@ -48,7 +48,7 @@ class TitleState extends MusicBeatState
 
 		var cupCircle:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('title/CupCircle', 'preload'));
 		cupCircle.setGraphicSize(Std.int(cupCircle.width / resizeConstant));
-		cupCircle.antialiasing = FlxG.save.data.highquality;
+		cupCircle.antialiasing = FlxG.save.data.lowquality;
 		cupCircle.blend = BlendMode.ADD;
 		cupCircle.updateHitbox();
 		cupCircle.screenCenter();
@@ -59,7 +59,7 @@ class TitleState extends MusicBeatState
 
 		var sansCircle:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('title/SansCircle', 'preload'));
 		sansCircle.setGraphicSize(Std.int(sansCircle.width / resizeConstant));
-		sansCircle.antialiasing = FlxG.save.data.highquality;
+		sansCircle.antialiasing = FlxG.save.data.lowquality;
 		sansCircle.blend = BlendMode.ADD;
 		sansCircle.updateHitbox();
 		sansCircle.screenCenter();
@@ -70,7 +70,7 @@ class TitleState extends MusicBeatState
 
 		var bendyCircle:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('title/BendyCircle', 'preload'));
 		bendyCircle.setGraphicSize(Std.int(bendyCircle.width / resizeConstant));
-		bendyCircle.antialiasing = FlxG.save.data.highquality;
+		bendyCircle.antialiasing = FlxG.save.data.lowquality;
 		bendyCircle.blend = BlendMode.ADD;
 		bendyCircle.updateHitbox();
 		bendyCircle.screenCenter();
@@ -81,7 +81,7 @@ class TitleState extends MusicBeatState
 
 		logoBl = new FlxSprite();
 		logoBl.frames = Paths.getSparrowAtlas('title/Logo');
-		logoBl.antialiasing = FlxG.save.data.highquality;
+		logoBl.antialiasing = FlxG.save.data.lowquality;
 		logoBl.animation.addByPrefix('bump', 'Tween 11 instance 1', 24, false);
 		logoBl.animation.play('bump');
 		logoBl.setGraphicSize(Std.int(logoBl.width / resizeConstant));
@@ -97,20 +97,20 @@ class TitleState extends MusicBeatState
 		playBttn.animation.addByPrefix('idle', 'Button instance 1', 24, true);
 		playBttn.animation.play('idle', true);
 		playBttn.setGraphicSize(Std.int(playBttn.width / 1.1));
-		playBttn.antialiasing = FlxG.save.data.highquality;
+		playBttn.antialiasing = FlxG.save.data.lowquality;
 		playBttn.blend = BlendMode.ADD;
 		add(playBttn);
 
 		var playText:FlxSprite = new FlxSprite(playBttn.x + 50, playBttn.y + 10).loadGraphic(Paths.image('title/PlayText'));
 		playText.setGraphicSize(Std.int(playText.width / 1.1));
-		playText.antialiasing = FlxG.save.data.highquality;
+		playText.antialiasing = FlxG.save.data.lowquality;
 		add(playText);
 
 		bfSpr = new FlxSprite(690, 180);
 		bfSpr.frames = Paths.getSparrowAtlas('title/BF');
 		bfSpr.animation.addByPrefix('idle', 'BF idle dance instance 1', 24, false);
 		bfSpr.animation.play('idle', true);
-		bfSpr.antialiasing = FlxG.save.data.highquality;
+		bfSpr.antialiasing = FlxG.save.data.lowquality;
 		bfSpr.blend = BlendMode.ADD;
 		add(bfSpr);
 
@@ -149,7 +149,7 @@ class TitleState extends MusicBeatState
 				FlxG.sound.music.stop();
 
 			#if android
-			skipText = new FlxText(0, FlxG.height - 26, 0, "Press Back on your Phone to skip", 18);
+			skipText = new FlxText(0, FlxG.height - 26, 0, "Premi Back sul tuo telefono per saltare", 18);
 			#else
 			skipText = new FlxText(0, FlxG.height - 26, 0, "Press Enter to skip", 18);
 			#end

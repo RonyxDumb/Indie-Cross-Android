@@ -48,7 +48,7 @@ class FreeplaySelect extends MusicBeatState
 		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menu/BG', 'preload'));
 		bg.updateHitbox();
 		bg.screenCenter();
-		bg.antialiasing = FlxG.save.data.highquality;
+		bg.antialiasing = FlxG.save.data.lowquality;
 		add(bg);
 
 		freeplayItems = new FlxTypedGroup<FlxSprite>();

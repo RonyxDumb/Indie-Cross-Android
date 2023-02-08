@@ -326,7 +326,7 @@ class CreditsMenu extends MusicBeatState
 		bg = new FlxSprite().loadGraphic(Paths.image('credits/bg/Leader_BG', 'preload'));
 		bg.updateHitbox();
 		bg.screenCenter();
-		bg.antialiasing = FlxG.save.data.highquality;
+		bg.antialiasing = FlxG.save.data.lowquality;
 		add(bg);
 
 		for (i in 0...credTypes.length)
@@ -365,14 +365,14 @@ class CreditsMenu extends MusicBeatState
 		selctionHighlighter = new FlxSprite(3, 11).loadGraphic(Paths.image('credits/icons/selector', 'preload'));
 		selctionHighlighter.setGraphicSize(Std.int(selctionHighlighter.width * 0.7));
 		selctionHighlighter.updateHitbox();
-		selctionHighlighter.antialiasing = FlxG.save.data.highquality;
+		selctionHighlighter.antialiasing = FlxG.save.data.lowquality;
 		selctionHighlighter.visible = false;
 		add(selctionHighlighter);
 
 		bigIcon = new FlxSprite(718, -50);
 		bigIcon.scale.set(0.65, 0.65);
 		bigIcon.updateHitbox();
-		bigIcon.antialiasing = FlxG.save.data.highquality;
+		bigIcon.antialiasing = FlxG.save.data.lowquality;
 		add(bigIcon);
 		bigIcon.loadGraphic(bigIconsAssets[0], false, bigIcon.frameWidth, bigIcon.frameHeight, true);
 
@@ -389,7 +389,7 @@ class CreditsMenu extends MusicBeatState
 		quoteBack = new FlxSprite(744, 535).loadGraphic(Paths.image('credits/bg/quote_box', 'preload'));
 		quoteBack.setGraphicSize(Std.int(quoteBack.width * 0.75));
 		quoteBack.updateHitbox();
-		quoteBack.antialiasing = FlxG.save.data.highquality;
+		quoteBack.antialiasing = FlxG.save.data.lowquality;
 		quoteBack.blend = OVERLAY;
 		quoteBack.visible = false;
 		add(quoteBack);
@@ -417,7 +417,7 @@ class CreditsMenu extends MusicBeatState
 		thanksTitle.animation.play('play');
 		thanksTitle.updateHitbox();
 		thanksTitle.screenCenter(X);
-		thanksTitle.antialiasing = FlxG.save.data.highquality;
+		thanksTitle.antialiasing = FlxG.save.data.lowquality;
 		thanksTitle.alpha = 0;
 		add(thanksTitle);
 

@@ -137,7 +137,7 @@ class ChartingState extends MusicBeatState
 		leBG.scrollFactor.set();
 		leBG.updateHitbox();
 		leBG.screenCenter();
-		leBG.antialiasing = FlxG.save.data.highquality;
+		leBG.antialiasing = FlxG.save.data.lowquality;
 		add(leBG);
 
 		var blackBorder:FlxSprite = new FlxSprite(60, 10).makeGraphic(120, 100, FlxColor.BLACK);
@@ -248,7 +248,7 @@ class ChartingState extends MusicBeatState
 		bendy = new FlxSprite(-410, -980);
 		bendy.frames = Paths.getSparrowAtlas('bonusSongs/NightmareJumpscares03', 'shared');
 		bendy.animation.addByPrefix('play', 'Emmi instance 1', 24, false);
-		bendy.antialiasing = FlxG.save.data.highquality;
+		bendy.antialiasing = FlxG.save.data.lowquality;
 		bendy.updateHitbox();
 		bendy.scrollFactor.set();
 		bendy.alpha = 0;
@@ -257,7 +257,7 @@ class ChartingState extends MusicBeatState
 		cuphead = new FlxSprite(-900, -800);
 		cuphead.frames = Paths.getSparrowAtlas('bonusSongs/NightmareJumpscares01', 'shared');
 		cuphead.animation.addByPrefix('play', 'CupScare instance 1', 24, false);
-		cuphead.antialiasing = FlxG.save.data.highquality;
+		cuphead.antialiasing = FlxG.save.data.lowquality;
 		cuphead.updateHitbox();
 		cuphead.scrollFactor.set();
 		cuphead.alpha = 0;
@@ -266,7 +266,7 @@ class ChartingState extends MusicBeatState
 		sans = new FlxSprite(-210, -630);
 		sans.frames = Paths.getSparrowAtlas('bonusSongs/NightmareJumpscares02', 'shared');
 		sans.animation.addByPrefix('play', 'Wussup Bitch instance 1', 24, false);
-		sans.antialiasing = FlxG.save.data.highquality;
+		sans.antialiasing = FlxG.save.data.lowquality;
 		sans.updateHitbox();
 		sans.scrollFactor.set();
 		sans.alpha = 0;
@@ -275,7 +275,7 @@ class ChartingState extends MusicBeatState
 		jumpscareStatic = new FlxSprite(0, 0);
 		jumpscareStatic.frames = Paths.getSparrowAtlas('bonusSongs/static', 'shared');
 		jumpscareStatic.animation.addByPrefix('static', 'static', 24, true);
-		jumpscareStatic.antialiasing = FlxG.save.data.highquality;
+		jumpscareStatic.antialiasing = FlxG.save.data.lowquality;
 		jumpscareStatic.updateHitbox();
 		jumpscareStatic.scrollFactor.set();
 		jumpscareStatic.alpha = 1.0;

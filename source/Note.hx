@@ -229,7 +229,7 @@ class Note extends FlxSprite
 
 		setGraphicSize(Std.int(width * noteWidth));
 		updateHitbox();
-		antialiasing = FlxG.save.data.highquality;
+		antialiasing = FlxG.save.data.lowquality;
 
 		switch (noteData % 4)
 		{

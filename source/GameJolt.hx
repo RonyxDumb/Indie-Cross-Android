@@ -18,22 +18,22 @@ import openfl.display.BitmapData;
 import openfl.display.Sprite;
 import openfl.text.TextField;
 import openfl.text.TextFormat;
-import flixel.addons.api.FlxGameJolt as GJApi;
+import tentools.api.FlxGameJolt as GJApi;
 
 using StringTools;
-
 class GameJoltAPI
 {
 	static var userLogin:Bool = false;
 	public static var totalTrophies:Float = GJApi.TROPHIES_ACHIEVED + GJApi.TROPHIES_MISSING;
 
-	public static var betatesters:Array<String> = [
-		// Core 			(unknown @)
+	public static var betatesters:Array<String> =
+	[
+		//Core 			(unknown @)
 		'8owser16',
 		'JellyFishEdm',
-		// ray zord 		(unknown @)
+		//ray zord 		(unknown @)
 		'UniqueGeese',
-		// woops 		(unknown @)
+		//woops 		(unknown @)
 		'KadeDev',
 		'StickyBM',
 		'BrightFyre',
@@ -221,9 +221,7 @@ class GameJoltLogin extends MusicBeatState
 	var trophy:FlxBar;
 	var trophyText:FlxText;
 	var missTrophyText:FlxText;
-
 	public static var fromOptions:Bool = false;
-
 	var menuItems:FlxTypedGroup<GJButton>;
 
 	public static var charBop:FlxSprite;
@@ -243,6 +241,7 @@ class GameJoltLogin extends MusicBeatState
 		persistentUpdate = true;
 
 		trace("init? " + GJApi.initialized);
+		FlxG.mouse.visible = true;
 
 		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('gamejolt/Background', 'preload'));
 		bg.setGraphicSize(FlxG.width);
@@ -287,9 +286,7 @@ class GameJoltLogin extends MusicBeatState
 		add(loginBoxes);
 
 		usernameBox = new FlxUIInputText(0, 175, 300, '', 32, FlxColor.BLACK, FlxColor.GRAY);
-		usernameBox.focusGained = () -> FlxG.stage.window.textInputEnabled = true;
 		tokenBox = new FlxUIInputText(0, 275, 300, '', 32, FlxColor.BLACK, FlxColor.GRAY);
-		tokenBox.focusGained = () -> FlxG.stage.window.textInputEnabled = true;
 
 		loginBoxes.add(usernameBox);
 		loginBoxes.add(tokenBox);
@@ -354,7 +351,7 @@ class GameJoltLogin extends MusicBeatState
 		menuItem.updateHitbox();
 		menuItem.screenCenter();
 
-		// small fix for the mouse overriding key selection thing
+		//small fix for the mouse overriding key selection thing
 
 		menuItem.x += baseX;
 		menuItem.y += yOffset;
@@ -366,7 +363,7 @@ class GameJoltLogin extends MusicBeatState
 		text.y += 35;
 		text.alpha = 0.5;
 		add(text);
-
+		
 		menuItems.add(menuItem);
 	}
 
@@ -377,9 +374,9 @@ class GameJoltLogin extends MusicBeatState
 			if (menuItems.members[selection].curAnimName == 'idle')
 			{
 				FlxG.sound.play(Paths.sound('scrollMenu'));
-
+	
 				curSelected = selection;
-
+	
 				if (!selected)
 				{
 					for (i in 0...menuItems.length)
@@ -412,50 +409,50 @@ class GameJoltLogin extends MusicBeatState
 			switch (menuItems.members[curSelected].daText)
 			{
 				case 'Sign In':
-					{
-						// Sign In
-						trace(usernameBox.text);
-						trace(tokenBox.text);
-						FlxG.sound.play(Paths.sound('confirmMenu'));
-						changeSelection(-1);
-						GameJoltAPI.authDaUser(usernameBox.text, tokenBox.text, true);
-					}
+				{
+					//Sign In
+					trace(usernameBox.text);
+					trace(tokenBox.text);
+					FlxG.sound.play(Paths.sound('confirmMenu'));
+					changeSelection(-1);
+					GameJoltAPI.authDaUser(usernameBox.text, tokenBox.text, true);
+				}
 				case 'Get Token':
-					{
-						// Gamejolt Token Tutorial
-						HelperFunctions.fancyOpenURL('https://www.youtube.com/watch?v=T5-x7kAGGnE');
-					}
+				{
+					//Gamejolt Token Tutorial
+					HelperFunctions.fancyOpenURL('https://www.youtube.com/watch?v=T5-x7kAGGnE');
+				}
 				case 'Go Back' | 'Continue':
+				{
+					//Go Back OR Continue
+					FlxG.sound.play(Paths.sound('cancelMenu'));
+
+					var durag:Float = 0;
+		
+					if (GameJoltLogin.fromOptions)
 					{
-						// Go Back OR Continue
-						FlxG.sound.play(Paths.sound('cancelMenu'));
-
-						var durag:Float = 0;
-
+						durag = 0.5;
+						if (FlxG.sound.music != null)
+						{
+							FlxG.sound.music.fadeOut(0.5, 0);
+						}
+					}
+			
+					new FlxTimer().start(durag, function(tmr:FlxTimer)
+					{
 						if (GameJoltLogin.fromOptions)
 						{
-							durag = 0.5;
-							if (FlxG.sound.music != null)
-							{
-								FlxG.sound.music.fadeOut(0.5, 0);
-							}
+							FlxG.sound.music.stop();
 						}
-
-						new FlxTimer().start(durag, function(tmr:FlxTimer)
-						{
-							if (GameJoltLogin.fromOptions)
-							{
-								FlxG.sound.music.stop();
-							}
-							GameJoltLogin.fromOptions = false;
-							FlxG.switchState(new MainMenuState());
-						});
-					}
+						GameJoltLogin.fromOptions = false;
+						FlxG.switchState(new MainMenuState());
+					});
+				}
 				case 'Log Out':
-					{
-						// Log Out & Restart
-						GameJoltAPI.deAuthDaUser();
-					}
+				{
+					//Log Out & Restart
+					GameJoltAPI.deAuthDaUser();
+				}
 			}
 		}
 	}
@@ -465,33 +462,20 @@ class GameJoltLogin extends MusicBeatState
 		if (FlxG.sound.music != null)
 			Conductor.songPosition = FlxG.sound.music.time;
 
-		#if android
-		for (touch in FlxG.touches.list)
-		{
-			if (touch.justPressed)
+	
+		#if android  
+		if (FlxG.android.justReleased.BACK)
 			{
-				if (curSelected != -1)
-				{
-					if (touch.overlaps(menuItems.members[curSelected]))
+				if (GameJoltLogin.fromOptions)
 					{
-						selectButton();
+						FlxG.sound.music.stop();
 					}
-				}
+					GameJoltLogin.fromOptions = false;
+					FlxG.switchState(new MainMenuState());
 			}
+		#end
 
-			for (i in 0...menuItems.members.length)
-			{
-				if (touch.overlaps(menuItems.members[i]))
-				{
-					changeSelection(i);
-				}
-				else
-				{
-					menuItems.members[i].playAnim('idle', true);
-				}
-			}
-		}
-		#else
+
 		if (FlxG.mouse.justPressed)
 		{
 			if (curSelected != -1)
@@ -517,14 +501,13 @@ class GameJoltLogin extends MusicBeatState
 				}
 			}
 		}
-		#end
 
 		if (!FlxG.sound.music.playing)
 		{
 			FlxG.sound.playMusic(Paths.music('freakyMenu'));
 		}
 
-		if (FlxG.keys.justPressed.ESCAPE #if android || FlxG.android.justReleased.BACK #end)
+		if (FlxG.keys.justPressed.ESCAPE)
 		{
 			if (GameJoltLogin.fromOptions)
 			{
@@ -544,12 +527,6 @@ class GameJoltLogin extends MusicBeatState
 	}
 }
 
-class GJKeys
-{
-	public static var id:Int = 0; // Put your game's ID here
-	public static var key:String = ""; // Put your game's private API key here
-}
-
 class GJButton extends FlxSprite
 {
 	public var animOffsets:Map<String, Array<Dynamic>>;
@@ -562,7 +539,7 @@ class GJButton extends FlxSprite
 		super(x, y);
 		daText = text;
 		animOffsets = new Map<String, Array<Dynamic>>();
-
+		
 		frames = Paths.getSparrowAtlas("gamejolt/Button_shit", "preload");
 		animation.addByPrefix('idle', 'Button instance 1', 24, true);
 		animation.addByPrefix('hover', 'Mouse on the button instance 1', 24, false);
@@ -575,9 +552,9 @@ class GJButton extends FlxSprite
 		playAnim('idle', true);
 
 		blend = BlendMode.ADD;
-		offset.set(0, 0);
-		antialiasing = FlxG.save.data.highquality;
-		scrollFactor.set();
+        offset.set(0, 0);
+		antialiasing = FlxG.save.data.lowquality;
+        scrollFactor.set();
 	}
 
 	public function setZoom(?toChange:Float = 1):Void
@@ -621,10 +598,8 @@ class GJToastManager extends Sprite
 	public function new()
 	{
 		super();
-
 		FlxG.signals.postStateSwitch.add(onStateSwitch);
 		FlxG.signals.gameResized.add(onWindowResized);
-
 		leSound = new FlxSound().loadEmbedded(Paths.sound('achievement'));
 		leSound.persist = true;
 		leSound.volume = 1;
@@ -789,7 +764,6 @@ class Toast extends Sprite
 	public function new(iconPath:String, titleText:String, description:String, color:FlxColor)
 	{
 		super();
-
 		back = new Bitmap(new BitmapData(500, 125, true, 0xFF000000));
 		back.alpha = 0.9;
 		back.x = 0;
@@ -797,8 +771,8 @@ class Toast extends Sprite
 
 		if (iconPath != null)
 		{
-			icon = new Bitmap(openfl.utils.Assets.getBitmapData(iconPath));
-			trace("BITMAP DATA: " + openfl.utils.Assets.getBitmapData(iconPath));
+			icon = new Bitmap(BitmapData.fromFile(iconPath));
+			trace("BITMAP DATA: " + BitmapData.fromFile(iconPath));
 			icon.x = 10;
 			icon.y = 10;
 
@@ -848,7 +822,7 @@ class Toast extends Sprite
 			desc.x = 5;
 		}
 		desc.y = 35;
-
+		
 		if (titleText.length >= 25 || titleText.contains("\n"))
 		{
 			desc.y += 25;

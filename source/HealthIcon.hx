@@ -24,7 +24,7 @@ class HealthIcon extends FlxSprite
 
 		animOffsets = new Map<String, Array<Dynamic>>();
 
-		antialiasing = FlxG.save.data.highquality;
+		antialiasing = FlxG.save.data.lowquality;
 
 		if ((character == 'devilFull' && FlxG.save.data.secretChars[0] || character == 'papyrus' && FlxG.save.data.secretChars[1]
 			|| character == 'papyrusandsans' && FlxG.save.data.secretChars[2] || character == 'sammy' && FlxG.save.data.secretChars[3]

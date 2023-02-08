@@ -1,5 +1,5 @@
 import flixel.util.FlxColor;
-// import GameJolt.GameJoltAPI;
+import GameJolt.GameJoltAPI;
 import flixel.FlxG;
 
 using StringTools;
@@ -71,7 +71,7 @@ class Achievements
 		{
 			FlxG.save.data.achievementsIndie[achievements[ID].id] = true;
 
-			// GameJoltAPI.getTrophy(achievements[ID].id);
+		    GameJoltAPI.getTrophy(achievements[ID].id);
 			Main.gjToastManager.createToast(Paths.getPath('images/' + Achievements.achievements[ID].img + '.png', IMAGE, 'achievements'),
 				Achievements.achievements[ID].name, Achievements.achievements[ID].desc, hasSound, Achievements.achievements[ID].color);
 
@@ -109,7 +109,7 @@ class Achievements
 		{
 			if (FlxG.save.data.achievementsIndie[i])
 			{
-				// GameJoltAPI.getTrophy(achievements[i].id);
+			   GameJoltAPI.getTrophy(achievements[i].id);
 			}
 		}
 	}

@@ -122,7 +122,7 @@ class GameOverCuphead extends MusicBeatSubstate
 		death.updateHitbox();
 		death.screenCenter();
 		death.scrollFactor.set();
-		death.antialiasing = FlxG.save.data.highquality;
+		death.antialiasing = FlxG.save.data.lowquality;
 		// death.cameras = [PlayState.instance.camHUD];
 		add(death);
 
@@ -134,7 +134,7 @@ class GameOverCuphead extends MusicBeatSubstate
 		bgImage.setGraphicSize(Std.int(bgImage.width * 1.2));
 		bgImage.updateHitbox();
 		bgImage.screenCenter();
-		bgImage.antialiasing = FlxG.save.data.highquality;
+		bgImage.antialiasing = FlxG.save.data.lowquality;
 		bgImage.scrollFactor.set();
 		bgImage.angle = -55;
 		bgImage.alpha = 0;
@@ -149,7 +149,7 @@ class GameOverCuphead extends MusicBeatSubstate
 		bfRunning.updateHitbox();
 		bfRunning.x = runPos[0][0];
 		bfRunning.y = runPos[0][1];
-		bfRunning.antialiasing = FlxG.save.data.highquality;
+		bfRunning.antialiasing = FlxG.save.data.lowquality;
 		bfRunning.scrollFactor.set();
 		bfRunning.angle = -10;
 		bfRunning.alpha = 0;
@@ -170,7 +170,7 @@ class GameOverCuphead extends MusicBeatSubstate
 			menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
 			menuItem.animation.play('idle', true);
 			menuItem.scrollFactor.set();
-			menuItem.antialiasing = FlxG.save.data.highquality;
+			menuItem.antialiasing = FlxG.save.data.lowquality;
 			menuItem.screenCenter();
 			menuItem.x = itmPos[i][0];
 			menuItem.y = itmPos[i][1];

@@ -46,7 +46,7 @@ class AchievementsMenuState extends MusicBeatState
 		var menuBG:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menu/BG', 'preload'));
 		menuBG.updateHitbox();
 		menuBG.screenCenter();
-		menuBG.antialiasing = FlxG.save.data.highquality;
+		menuBG.antialiasing = FlxG.save.data.lowquality;
 		add(menuBG);
 
 		grpAchievements = new FlxTypedGroup<Alphabet>();
@@ -80,7 +80,7 @@ class AchievementsMenuState extends MusicBeatState
 		bottompannel.flipY = true;
 		bottompannel.updateHitbox();
 		bottompannel.screenCenter();
-		bottompannel.antialiasing = FlxG.save.data.highquality;
+		bottompannel.antialiasing = FlxG.save.data.lowquality;
 		add(bottompannel);
 
 		descText = new FlxText(150, 5, 980, "", 32);

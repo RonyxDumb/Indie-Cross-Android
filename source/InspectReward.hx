@@ -28,7 +28,7 @@ class InspectReward extends MusicBeatSubstate
 		icon = new AchieveIcon(0, 0, AchievementsMenuState.curSelected);
 		icon.updateHitbox();
 		icon.screenCenter();
-		icon.antialiasing = FlxG.save.data.highquality;
+		icon.antialiasing = FlxG.save.data.lowquality;
 		icon.scrollFactor.set();
 		icon.alpha = 0;
 		add(icon);

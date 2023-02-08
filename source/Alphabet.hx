@@ -422,7 +422,7 @@ class AlphaCharacter extends FlxSprite
 		setGraphicSize(Std.int(width * textSize));
 		updateHitbox();
 		this.textSize = textSize;
-		antialiasing = FlxG.save.data.highquality;
+		antialiasing = FlxG.save.data.lowquality;
 	}
 
 	public function createBoldLetter(letter:String)

@@ -27,7 +27,8 @@ class AchieveIcon extends FlxSprite
 
 		scrollFactor.set();
 		updateHitbox();
-		antialiasing = FlxG.save.data.highquality;
+		antialiasing = FlxG.save.data.lowquality;
+	//	antialiasing = FlxG.save.data.lowquality;
 	}
 
 	override function update(elapsed:Float)

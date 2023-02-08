@@ -126,7 +126,7 @@ class GameOverSubstate extends MusicBeatSubstate
 					gameOverSpr.updateHitbox();
 					gameOverSpr.screenCenter();
 					gameOverSpr.scrollFactor.set();
-					gameOverSpr.antialiasing = FlxG.save.data.highquality;
+					gameOverSpr.antialiasing = FlxG.save.data.lowquality;
 					add(gameOverSpr);
 					gameOverSpr.alpha = 0;
 

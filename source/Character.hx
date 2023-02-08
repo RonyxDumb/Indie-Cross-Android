@@ -44,7 +44,7 @@ class Character extends FlxSprite
 		curCharacter = character;
 		this.isPlayer = isPlayer;
 
-		antialiasing = FlxG.save.data.highquality;
+		antialiasing = FlxG.save.data.lowquality;
 
 		switch (curCharacter)
 		{

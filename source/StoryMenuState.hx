@@ -41,7 +41,7 @@ class DiffButton extends FlxSprite
 		playAnim(HelperFunctions.mechDifficultyFromInt(StoryMenuState.curMechDifficulty), true);
 
 		offset.set(0, 0);
-		antialiasing = FlxG.save.data.highquality;
+		antialiasing = FlxG.save.data.lowquality;
 		scrollFactor.set();
 	}
 
@@ -141,7 +141,7 @@ class StoryMenuState extends MusicBeatState
 		actualBG.setGraphicSize(Std.int(actualBG.width * daScaling));
 		actualBG.updateHitbox();
 		actualBG.screenCenter();
-		actualBG.antialiasing = FlxG.save.data.highquality;
+		actualBG.antialiasing = FlxG.save.data.lowquality;
 		add(actualBG);
 
 		gamingSands = new FlxSprite();
@@ -153,7 +153,7 @@ class StoryMenuState extends MusicBeatState
 		gamingSands.updateHitbox();
 		gamingSands.x = -13;
 		gamingSands.y = -41;
-		gamingSands.antialiasing = FlxG.save.data.highquality;
+		gamingSands.antialiasing = FlxG.save.data.lowquality;
 		add(gamingSands);
 
 		bendoBG = new FlxSprite();
@@ -164,7 +164,7 @@ class StoryMenuState extends MusicBeatState
 		bendoBG.setGraphicSize(Std.int(bendoBG.width * daScaling));
 		bendoBG.updateHitbox();
 		bendoBG.screenCenter();
-		bendoBG.antialiasing = FlxG.save.data.highquality;
+		bendoBG.antialiasing = FlxG.save.data.lowquality;
 		bendoBG.alpha = 0;
 		add(bendoBG);
 
@@ -172,7 +172,7 @@ class StoryMenuState extends MusicBeatState
 		leftpanel.scrollFactor.set();
 		leftpanel.updateHitbox();
 		leftpanel.screenCenter();
-		leftpanel.antialiasing = FlxG.save.data.highquality;
+		leftpanel.antialiasing = FlxG.save.data.lowquality;
 		add(leftpanel);
 
 		gamingCup = new FlxSprite();
@@ -184,7 +184,7 @@ class StoryMenuState extends MusicBeatState
 		gamingCup.updateHitbox();
 		gamingCup.x = 760;
 		gamingCup.y = 233;
-		gamingCup.antialiasing = FlxG.save.data.highquality;
+		gamingCup.antialiasing = FlxG.save.data.lowquality;
 		add(gamingCup);
 
 		var bottompannel:FlxSprite = new FlxSprite().loadGraphic(Paths.image('story mode/Score_bottom panel', 'preload'));
@@ -192,7 +192,7 @@ class StoryMenuState extends MusicBeatState
 		bottompannel.setGraphicSize(Std.int(bottompannel.width * daScaling));
 		bottompannel.updateHitbox();
 		bottompannel.screenCenter();
-		bottompannel.antialiasing = FlxG.save.data.highquality;
+		bottompannel.antialiasing = FlxG.save.data.lowquality;
 		add(bottompannel);
 
 		diffifSpr = new FlxSprite();
@@ -206,7 +206,7 @@ class StoryMenuState extends MusicBeatState
 		diffifSpr.updateHitbox();
 		diffOrigX = -2;
 		diffifSpr.y = 128;
-		diffifSpr.antialiasing = FlxG.save.data.highquality;
+		diffifSpr.antialiasing = FlxG.save.data.lowquality;
 		add(diffifSpr);
 
 		diffTween = FlxTween.tween(this, {}, 0);
@@ -223,7 +223,7 @@ class StoryMenuState extends MusicBeatState
 		#end
 		holdshifttext.setFormat(HelperFunctions.returnMenuFont(scoreText), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		holdshifttext.borderSize = 1.5;
-		holdshifttext.antialiasing = FlxG.save.data.highquality;
+		holdshifttext.antialiasing = FlxG.save.data.lowquality;
 		holdshifttext.alpha = 0.8;
 		add(holdshifttext);
 
@@ -232,7 +232,7 @@ class StoryMenuState extends MusicBeatState
 		storyPanel.setGraphicSize(Std.int(storyPanel.width * daScaling));
 		storyPanel.updateHitbox();
 		storyPanel.screenCenter();
-		storyPanel.antialiasing = FlxG.save.data.highquality;
+		storyPanel.antialiasing = FlxG.save.data.lowquality;
 		add(storyPanel);
 
 		options = [];
@@ -246,7 +246,7 @@ class StoryMenuState extends MusicBeatState
 			options.push(menuItem);
 			menuItem.alpha = 0.5;
 			menuItem.scrollFactor.set();
-			menuItem.antialiasing = FlxG.save.data.highquality;
+			menuItem.antialiasing = FlxG.save.data.lowquality;
 			menuItem.updateHitbox();
 			menuItem.screenCenter();
 			actualLeft = menuItem.x;
@@ -257,7 +257,7 @@ class StoryMenuState extends MusicBeatState
 			optFlashes.push(flash);
 			flash.alpha = 0;
 			flash.scrollFactor.set();
-			flash.antialiasing = FlxG.save.data.highquality;
+			flash.antialiasing = FlxG.save.data.lowquality;
 			flash.updateHitbox();
 		}
 
@@ -283,7 +283,7 @@ class StoryMenuState extends MusicBeatState
 		cupTea.setGraphicSize(Std.int((FlxG.width / FlxG.camera.zoom) * 1.1), Std.int((FlxG.height / FlxG.camera.zoom) * 1.1));
 		cupTea.updateHitbox();
 		cupTea.screenCenter();
-		cupTea.antialiasing = FlxG.save.data.highquality;
+		cupTea.antialiasing = FlxG.save.data.lowquality;
 		cupTea.scrollFactor.set();
 		if (fromWeek == 0)
 		{

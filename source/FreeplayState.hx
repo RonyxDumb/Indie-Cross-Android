@@ -4,7 +4,7 @@ package;
 import android.Tools;
 #end
 import offsetMenus.IconOffsets;
-// import GameJolt.GameJoltInfo;
+import GameJolt.GameJoltInfo;
 import Shaders.FXHandler;
 import flixel.FlxCamera;
 import flixel.FlxG;
@@ -114,6 +114,21 @@ class FreeplayState extends MusicBeatState
 		{
 			case 0:
 				{
+					#if debug
+					songs.push(new SongMetadata('Snake-Eyes', 0, 'cuphead'));
+					songs.push(new SongMetadata('Technicolor-Tussle', 0, 'cuphead'));
+					songs.push(new SongMetadata('Knockout', 0, 'angrycuphead'));
+					songs.push(new SongMetadata('Whoopee', 1, 'sans'));
+					songs.push(new SongMetadata('Sansational', 1, 'sans'));
+					songs.push(new SongMetadata('Burning-In-Hell', 1, 'sansScared'));
+					songs.push(new SongMetadata('Final-Stretch', 1, 'sans'));
+					songs.push(new SongMetadata('Imminent-Demise', 2, 'bendyDA'));
+					songs.push(new SongMetadata('Terrible-Sin', 2, 'bendy'));
+					songs.push(new SongMetadata('Last-Reel', 2, 'bendy'));
+					songs.push(new SongMetadata('Nightmare-Run', 2, 'bendy'));
+					#end
+
+					#if release
 					if (FlxG.save.data.weeksbeat[0])
 					{
 						songs.push(new SongMetadata('Snake-Eyes', 0, 'cuphead'));
@@ -144,9 +159,19 @@ class FreeplayState extends MusicBeatState
 						songs.push(new SongMetadata('Last-Reel', 2, 'bendy'));
 						songs.push(new SongMetadata('Nightmare-Run', 2, 'bendy'));
 					}
+					#end
 				}
 			case 1:
 				{
+					#if debug
+					songs.push(new SongMetadata('Satanic-Funkin', 0, 'devilFull'));
+					songs.push(new SongMetadata('Bad-To-The-Bone', 1, 'papyrus'));
+					songs.push(new SongMetadata('Bonedoggle', 1, 'papyrusandsans'));
+					songs.push(new SongMetadata('Ritual', 2, 'sammy'));
+					songs.push(new SongMetadata('Freaky-Machine', 2, 'bendyDA'));
+					#end
+
+					#if release
 					if (FlxG.save.data.weeksbeat[0] || MainMenuState.debugTools)
 					{
 						songs.push(new SongMetadata('Satanic-Funkin', 0, 'devilFull'));
@@ -172,9 +197,17 @@ class FreeplayState extends MusicBeatState
 					}
 
 					trace("weeks beat: " + FlxG.save.data.weeksbeat);
+					#end
 				}
 			case 2:
 				{
+					#if debug
+					songs.push(new SongMetadata('Devils-Gambit', 0, 'cupheadNightmare'));
+					songs.push(new SongMetadata('Bad-Time', 1, 'sansNightmare'));
+					songs.push(new SongMetadata('Despair', 2, 'bendyNightmare'));
+					#end
+
+					#if release
 					if ((FlxG.save.data.weeksbeatonhard[0] && FlxG.save.data.shownalerts[0]) || MainMenuState.debugTools)
 					{
 						songs.push(new SongMetadata('Devils-Gambit', 0, 'cupheadNightmare'));
@@ -194,6 +227,7 @@ class FreeplayState extends MusicBeatState
 					trace("cup secret: " + FlxG.save.data.secretChars[5]);
 					trace("sans secret: " + FlxG.save.data.secretChars[6]);
 					trace("bendy secret: " + FlxG.save.data.secretChars[7]);
+					#end
 				}
 		}
 
@@ -228,7 +262,7 @@ class FreeplayState extends MusicBeatState
 		// bg.setGraphicSize(Std.int(bg.width * 0.675));
 		bg.updateHitbox();
 		bg.screenCenter();
-		bg.antialiasing = FlxG.save.data.highquality;
+		bg.antialiasing = FlxG.save.data.lowquality;
 		add(bg);
 
 		grpSongs = new FlxTypedGroup<Alphabet>();
@@ -295,7 +329,7 @@ class FreeplayState extends MusicBeatState
 		jbugWatermark = new FlxSprite().loadGraphic(Paths.image('bonusSongs/J-BugWatermark', 'shared'));
 		jbugWatermark.x = 930;
 		jbugWatermark.y = 500;
-		jbugWatermark.antialiasing = FlxG.save.data.highquality;
+		jbugWatermark.antialiasing = FlxG.save.data.lowquality;
 		jbugWatermark.setGraphicSize(Std.int(jbugWatermark.width * 0.6));
 		jbugWatermark.scrollFactor.set();
 		jbugWatermark.alpha = 0;
@@ -325,7 +359,7 @@ class FreeplayState extends MusicBeatState
 		cupTea.setGraphicSize(Std.int((FlxG.width / FlxG.camera.zoom) * 1.1), Std.int((FlxG.height / FlxG.camera.zoom) * 1.1));
 		cupTea.updateHitbox();
 		cupTea.screenCenter();
-		cupTea.antialiasing = FlxG.save.data.highquality;
+		cupTea.antialiasing = FlxG.save.data.lowquality;
 		cupTea.scrollFactor.set();
 		cupTea.cameras = [camHUD];
 		if (fromWeek == 0)
@@ -382,7 +416,7 @@ class FreeplayState extends MusicBeatState
 			// alert.setGraphicSize(Std.int((FlxG.width / FlxG.camera.zoom) * 1.1), Std.int((FlxG.height / FlxG.camera.zoom) * 1.1));
 			alert.updateHitbox();
 			alert.screenCenter();
-			alert.antialiasing = FlxG.save.data.highquality;
+			alert.antialiasing = FlxG.save.data.lowquality;
 			alert.scrollFactor.set();
 			alert.cameras = [camHUD];
 			add(alert);
@@ -459,7 +493,7 @@ class FreeplayState extends MusicBeatState
 			alert.setGraphicSize(Std.int((FlxG.width / FlxG.camera.zoom) * 1), Std.int((FlxG.height / FlxG.camera.zoom) * 1));
 			alert.updateHitbox();
 			alert.screenCenter();
-			alert.antialiasing = FlxG.save.data.highquality;
+			alert.antialiasing = FlxG.save.data.lowquality;
 			alert.scrollFactor.set();
 			alert.cameras = [camHUD];
 			add(alert);

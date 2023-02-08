@@ -31,7 +31,7 @@ class Prompt extends MusicBeatSubstate
 		var icon:FlxSprite = new FlxSprite().loadGraphic(Paths.image('what', 'achievements'));
 		icon.updateHitbox();
 		icon.screenCenter();
-		icon.antialiasing = FlxG.save.data.highquality;
+		icon.antialiasing = FlxG.save.data.lowquality;
 		icon.scrollFactor.set();
 		icon.alpha = 0;
 		add(icon);
