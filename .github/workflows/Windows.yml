@@ -40,8 +40,8 @@ install:
   - lime rebuild extension-webm windows
   - haxelib list
 
-   build_script:
-  - haxelib run lime build windows
+-  name: Windows Compiling
+  run: haxelib run lime build windows
 
 artifacts:
   - path: export/release/windows/bin
